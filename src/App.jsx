@@ -2,6 +2,7 @@ import Profile from "./components/content/Profile";
 import About from "./components/content/About";
 import Experience from "./components/content/Experience";
 import Projects from "./components/content/Projects";
+import ThemeToggle from "./components/utilities/ThemeToggle.jsx";
 import Cursor from "./components/utilities/Cursor.jsx";
 import Signature from "./components/content/Signature.jsx";
 
@@ -45,9 +46,10 @@ export default function App() {
   );
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <Cursor />
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-12 md:py-16 lg:py-0">
+        <ThemeToggle />
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Left Sidebar */}
           <Profile profile={profile} />

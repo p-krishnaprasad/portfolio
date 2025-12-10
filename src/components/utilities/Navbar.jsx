@@ -30,13 +30,15 @@ export default function Navbar() {
             <a href={`#${section}`} className={`group flex items-center py-3 `}>
               <span
                 className={`nav-indicator mr-4 h-px w-8 ${
-                  active === section ? "w-16 bg-white" : "bg-slate-600"
+                  active === section
+                    ? "w-16 bg-black dark:bg-white"
+                    : "bg-slate-600"
                 }`}
               ></span>
               <span
                 className={`nav-text text-xs font-bold uppercase tracking-widest ${
                   active === section
-                    ? "font-bold text-slate-200"
+                    ? "font-bold dark:text-slate-400"
                     : "text-slate-500"
                 }`}
               >

@@ -6,11 +6,11 @@ export default function Profile({ profile }) {
     <>
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight dark:text-slate-400 sm:text-5xl">
             <a href="/">{profile.first_name}</a>
           </h1>
 
-          <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+          <h2 className="mt-3 text-lg font-medium tracking-tight dark:text-slate-400 sm:text-xl">
             {profile.role}
           </h2>
 
@@ -21,7 +21,7 @@ export default function Profile({ profile }) {
           {profile.socials.map((social, idx) => (
             <li className="mr-5 shrink-0 text-xs" key={idx}>
               <a
-                className="block hover:text-slate-200"
+                className="block hover:dark:text-slate-400"
                 href={social.link}
                 target="_blank"
                 rel="noreferrer noopener"

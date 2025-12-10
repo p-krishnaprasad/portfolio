@@ -3,7 +3,7 @@ export default function ParaWrapper({ parts }) {
     <p className="mb-4">
       {parts.map((part, i) =>
         part.bold ? (
-          <strong key={i} className="font-semibold text-slate-200">
+          <strong key={i} className="font-semibold dark:text-slate-400">
             {part.text}
           </strong>
         ) : (

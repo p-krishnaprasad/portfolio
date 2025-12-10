@@ -1,6 +1,8 @@
 @import "@fontsource-variable/inter";
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   font-family: "Inter Variable", sans-serif;
   scroll-behavior: smooth;
