@@ -3,7 +3,7 @@ import SectionWrapper from "../layout/SectionWrapper.jsx";
 import ProjectImage from "./ProjectImage.jsx";
 import ContentCard from "../layout/ContentCard.jsx";
 
-export default function Projects({ projects }) {
+export default function Projects({ projects, analyticsSource = "projects" }) {
   return (
     <SectionWrapper id="projects" title="Projects">
       <ol className="group/list">
@@ -14,6 +14,7 @@ export default function Projects({ projects }) {
               title={prj.title}
               description={prj.description}
               tags={prj.technologies}
+              analyticsSource={analyticsSource}
             >
               <ProjectImage
                 imageName={prj.image} // e.g., "course-card.png" from JSON

@@ -1,4 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
+import { trackGAEvent } from "../utilities/gtag.jsx";
 
 export default function ContentCard({
   link,
@@ -7,6 +8,7 @@ export default function ContentCard({
   tags = [],
   children,
   overlay = true,
+  analyticsSource = "",
 }) {
   return (
     <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:opacity-100! lg:group-hover/list:opacity-50">
@@ -25,7 +27,11 @@ export default function ContentCard({
               }`}
               href={link}
               onClick={(e) => {
-                if (!link) e.preventDefault();
+                if (!link) {
+                  e.preventDefault();
+                  return;
+                }
+                trackGAEvent(title, analyticsSource);
               }}
               target="_blank"
               rel="noreferrer noopener"

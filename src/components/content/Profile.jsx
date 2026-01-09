@@ -4,10 +4,10 @@ import { LuCodeXml } from "react-icons/lu";
 import Navbar from "../utilities/Navbar";
 import { useTheme } from "../../context/ThemeContext.jsx";
 import TypewriterText from "../utilities/TypewriterText.jsx";
+import { event } from "../utilities/gtag.jsx";
+import { trackGAEvent } from "../utilities/gtag.jsx";
 
-export default function Profile({ profile }) {
-  const { theme, toggleTheme } = useTheme();
-
+export default function Profile({ profile, analyticsSource = "profile" }) {
   return (
     <>
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
@@ -33,6 +33,7 @@ export default function Profile({ profile }) {
                 rel="noreferrer noopener"
                 aria-label="GitHub (opens in a new tab)"
                 title={social.name}
+                onClick={() => trackGAEvent(social.name, analyticsSource)}
               >
                 {social.name === "Code" && <LuCodeXml className="h-6 w-6" />}
                 {social.name === "GitHub" && <FaGithub className="h-6 w-6" />}
