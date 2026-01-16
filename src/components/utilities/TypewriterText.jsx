@@ -13,7 +13,7 @@ export default function TypewriterText({ text }) {
   // 3. Apply the chosen color via the inline CSS variable
   return (
     <p
-      className="cursor typewriter-animation"
+      className="cursor typewriter-animation leading-[1.25]"
       style={{ "--cursor-color": dynamicColor }}
     >
       {text}
