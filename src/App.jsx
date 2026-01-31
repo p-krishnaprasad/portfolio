@@ -6,6 +6,7 @@ import Projects from "./components/content/Projects";
 import ThemeToggle from "./components/utilities/ThemeToggle.jsx";
 import Cursor from "./components/utilities/Cursor.jsx";
 import Signature from "./components/content/Signature.jsx";
+import Contact from "./components/content/Contact.jsx";
 import {
   GA_MEASUREMENT_ID,
   profile,
@@ -57,6 +58,7 @@ export default function App() {
               <About about={about} />
               <Experience experiences={experiences} />
               <Projects projects={projects} />
+              <Contact />
               <Signature signature={signature} />
             </div>
           </div>
