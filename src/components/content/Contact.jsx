@@ -6,17 +6,21 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // stop navigation
 
     const form = e.target;
     const data = new FormData(form);
 
-    await fetch("/", {
-      method: "POST",
-      body: data,
-    });
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: data,
+      });
 
-    setSubmitted(true);
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Form submission failed", err);
+    }
   };
 
   const handleAnother = () => {
