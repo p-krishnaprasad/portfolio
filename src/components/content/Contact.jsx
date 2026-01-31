@@ -5,22 +5,33 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const encode = (data) => new URLSearchParams(data).toString();
+
   const handleSubmit = async (e) => {
-    e.preventDefault(); // stop navigation
+    e.preventDefault();
 
     const form = e.target;
-    const data = new FormData(form);
+
+    const data = {
+      "form-name": "contact",
+      name,
+      email: form.email.value,
+      message: form.message.value,
+    };
 
     try {
       await fetch("/", {
         method: "POST",
-        body: data,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: encode(data),
       });
-
-      setSubmitted(true);
     } catch (err) {
-      console.error("Form submission failed", err);
+      // ignore network response
     }
+
+    setSubmitted(true);
   };
 
   const handleAnother = () => {
