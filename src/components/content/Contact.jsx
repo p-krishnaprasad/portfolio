@@ -5,35 +5,6 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const encode = (data) => new URLSearchParams(data).toString();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-
-    const data = {
-      "form-name": "contact",
-      name,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: encode(data),
-      });
-    } catch (err) {
-      // ignore network response
-    }
-
-    setSubmitted(true);
-  };
-
   const handleAnother = () => {
     setSubmitted(false);
   };
@@ -66,9 +37,8 @@ export default function Contact() {
             name="contact"
             method="POST"
             data-netlify="true"
-            onSubmit={(e) => {
-              handleSubmit();
-            }}
+            netlify-honeypot="bot-field"
+            onSubmit={() => setSubmitted(true)}
             className="mt-5 space-y-6 dark:bg-slate-800/50 p-8 rounded-2xl border-2 dark:border-0 border-black"
           >
             {/* Required by Netlify */}
