@@ -70,7 +70,7 @@ export default function Contact() {
             onSubmit={(e) => {
               handleSubmit(e);
             }}
-            className="mt-5 space-y-6 dark:bg-slate-800/50 p-8 rounded-2xl border-2 dark:border-0 border-black"
+            className="mt-5 space-y-6 text-black dark:text-white bg-white dark:bg-slate-800/50 p-8 rounded-2xl border-2 dark:border-0 border-black"
           >
             {/* Required by Netlify */}
             <input type="hidden" name="form-name" value="contact" />
@@ -86,7 +86,7 @@ export default function Contact() {
                 required
                 placeholder="Your name"
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="mt-1 w-full rounded-lg border text-black border-neutral-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white  px-4 py-2 focus:outline-none "
               />
             </div>
 
@@ -99,7 +99,7 @@ export default function Contact() {
                 name="email"
                 required
                 placeholder="you@example.com"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="mt-1 w-full rounded-lg border text-black border-neutral-400 dark:border-slate-700 dark:bg-slate-900 px-4 py-2 dark:text-white  focus:outline-none "
               />
             </div>
 
@@ -111,14 +111,14 @@ export default function Contact() {
                 name="message"
                 rows="4"
                 required
-                placeholder="Tell me a bit about your idea or role"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-2 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="Tell me a bit about your idea"
+                className="mt-1 w-full rounded-lg border text-black border-neutral-400 dark:border-slate-700 dark:bg-slate-900 px-4 py-2 dark:text-white  focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full rounded-lg bg-indigo-600 px-6 py-3 text-white font-semibold hover:bg-indigo-700 transition"
+              className="w-full rounded-lg bg-black px-6 py-3 text-white font-semibold hover:bg-neutral-600 hover:dark:bg-slate-900 transition dark:bg-teal-400/10 dark:text-teal-300"
             >
               Send Message
             </button>
