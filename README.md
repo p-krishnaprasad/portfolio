@@ -68,16 +68,103 @@ You need **Node.js** and **npm** installed on your machine.
     **`.env` file sample configuration:**
 
     ```env
-    VITE_PORTFOLIO_PROFILE_DATA='{"profile":{"first_name":"Krishna Prasad","last_name":"Pentakota","role":"Full Stack Developer","bio":"I build accessible, pixel-perfect digital experiences for the web.","socials":[{"name":"GitHub","link":"[https://github.com/p-krishnaprasad](https://github.com/p-krishnaprasad)"},{"name":"LinkedIn","link":"[https://www.linkedin.com/in/krishna-prasad-p/](https://www.linkedin.com/in/krishna-prasad-p/)"}]}}'
+    # Google Analytics
+    VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 
-    VITE_PORTFOLIO_ABOUT_DATA='{"about":[{"parts":[{"text":"I am a seasoned ","bold":false},{"text":"Software Engineer","bold":true}]}]}'
+    # About section content
+    VITE_PORTFOLIO_ABOUT_DATA={
+    "about": [
+        {
+        "parts": [
+            { "text": "I am an experienced ", "bold": false },
+            { "text": "Software Engineer", "bold": true },
+            {
+            "text": ", with a strong interest in building scalable applications and intuitive digital products. I enjoy turning complex ideas into reliable, user-friendly solutions.",
+            "bold": false
+            }
+        ]
+        }
+    ]
+    }
 
-    VITE_PORTFOLIO_EXPERIENCES_DATA='{"experiences":[{"role":"Senior Consultant","company":"GCI Consulting","companyLink":"[https://gciconsulting.com/](https://gciconsulting.com/)","period":"Sep 2022 — Present","description":"Designed and developed end-to-end ETL pipelines and digital banking solutions using Pentaho, Python, Vermeg, and Temenos Infinity, ensuring accurate APRA submissions and regulatory compliance. Built data transformation logic, APIs, and hybrid web/mobile applications while collaborating with stakeholders to define requirements and reporting standards. Led development efforts, managed releases, and resolved production issues to ensure stable, scalable, and efficient banking platforms.","technologies":["Python","Pentaho","React","JavaScript","Edge Connect","HTML & CSS","SQL"]}]}'
+    # Experience section content
+    VITE_PORTFOLIO_EXPERIENCES_DATA={
+    "experiences": [
+        {
+        "role": "Software Engineer",
+        "company": "Example Technologies",
+        "companyLink": "https://example.com/",
+        "period": "Jan 2021 — Present",
+        "description": "Worked on designing, developing, and maintaining web applications while collaborating closely with cross-functional teams.",
+        "technologies": [
+            "JavaScript",
+            "React",
+            "Node.js",
+            "HTML & CSS",
+            "SQL",
+            "REST APIs",
+            "Git"
+        ]
+        }
+    ]
+    }
 
-    VITE_PORTFOLIO_PROJECTS_DATA='{"projects":[{"title":"Portfolio Website","description":"A minimal, accessible, and animated portfolio site built with React and Tailwind.","technologies":["React","Tailwind","Accessibility"],"link":"","image":"portfolio.png"}]}'
+    # Profile section content
+    VITE_PORTFOLIO_PROFILE_DATA={
+    "profile": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "role": "Full Stack Developer",
+        "bio": "I enjoy building clean, performant, and accessible web applications with modern technologies.",
+        "socials": [
+        { "name": "GitHub", "link": "https://github.com/johndoe" },
+        { "name": "LinkedIn", "link": "https://linkedin.com/in/johndoe" }
+        ]
+    }
+    }
 
-    VITE_PORTFOLIO_SIGNATURE_DATA='{"signature":[{"parts":[{"text":"From ","bold":false},{"text":"Figma ","bold":true},{"text":"to ","bold":false},{"text":"VS Code","bold":true},{"text":", brought to life with ","bold":false},{"text":"React","bold":true},{"text":", ","bold":false},{"text":"Tailwind CSS","bold":true},{"text":", and ","bold":false},{"text":"Vite","bold":true},{"text":". Deployed on ","bold":false},{"text":"Netlify","bold":true},{"text":", with every letter dressed in ","bold":false},{"text":"Inter","bold":true},{"text":". Crafted by me, Krishna — because someone had to make pixels happy.","bold":false}]}]}'
+    # Projects section content
+    VITE_PORTFOLIO_PROJECTS_DATA={
+    "projects": [
+        {
+        "title": "Personal Portfolio",
+        "description": "A responsive personal portfolio showcasing projects, skills, and experience.",
+        "technologies": ["React", "Vite", "Tailwind CSS"],
+        "link": "https://example-portfolio.com",
+        "image": "portfolio.png"
+        }
+    ]
+    }
+
+    # Footer / signature content
+    VITE_PORTFOLIO_SIGNATURE_DATA={
+    "signature": [
+        {
+        "parts": [
+            { "text": "Designed in ", "bold": false },
+            { "text": "Figma", "bold": true },
+            { "text": ", developed in ", "bold": false },
+            { "text": "VS Code", "bold": true },
+            { "text": ", and built using ", "bold": false },
+            { "text": "React", "bold": true },
+            { "text": ", ", "bold": false },
+            { "text": "Tailwind CSS", "bold": true },
+            { "text": ", and ", "bold": false },
+            { "text": "Vite", "bold": true },
+            { "text": ". Deployed via ", "bold": false },
+            { "text": "Netlify", "bold": true },
+            {
+            "text": ", focusing on simplicity, performance, and clean design.",
+            "bold": false
+            }
+        ]
+        }
+    ]
+    }
+
     ```
+
+    > ⚠️ When using these values in a real `.env` file, the JSON objects must be **stringified into a single line**.
 
     > **Note:** All environment variables prefixed with `VITE_` are automatically exposed to Vite. You must restart the development server after updating the `.env` file for changes to take effect.
 

@@ -19,6 +19,7 @@ html {
     Duration is 5s (1s delay + 4s typing).
     It uses a custom property to manage the blink alongside width.
   */
+  --typewriter-width: 70%;
   animation: typewriter 5s infinite normal both;
 }
 
@@ -86,6 +87,12 @@ html {
 
   /* Ensure final width is 100% */
   100% {
-    width: 70%;
+    width: var(--typewriter-width);
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter-animation {
+    --typewriter-width: 100%;
   }
 }
